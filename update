@@ -197,7 +197,7 @@ CHECK() {
 	#		CONKY
 	#----------------------------------------------------#
 	if [ -f $HOME/.conkyrc ]; then
-		CONKY=Installed
+		CONKY="Installed"
 	else
 		CONKY="Not Installed"
 	fi
@@ -205,7 +205,7 @@ CHECK() {
 	#		M0IAX
 	#----------------------------------------------------#
 	if [ -f /usr/local/bin/JS8CallUtils_v2 ]; then
-		M0IAX=Installed
+		M0IAX="Installed"
 	else
 		M0IAX="Not Installed"
 	fi
@@ -223,7 +223,7 @@ CHECK() {
 			head -n 1 | awk -F "/" '{print $7}')
 
 		if (($(echo "$NEWRIG $RIG" | awk '{print ($1 > $2)}'))); then
-			RIG=NEEDS-UPDATE
+			RIG="NEEDS-UPDATE"
 		else
 			RIG="is_latest_version"
 		fi
@@ -241,7 +241,7 @@ CHECK() {
 			grep .tar.gz | head -1 | awk -F "-" '{print $2}' | awk -F ".tar" '{print $1}')
 
 		if (($(echo "$NEWFLDIGI $FLDIGI" | awk '{print ($1 > $2)}'))); then
-			FLDIGI=NEEDS-UPDATE
+			FLDIGI="NEEDS-UPDATE"
 		else
 			FLDIGI="is_latest_version"
 		fi
@@ -259,7 +259,7 @@ CHECK() {
 			sed 's/">\ flwrap.*$//' | sed 's/flwrap-//' | sed 's/.tar.gz//')
 
 		if (($(echo "$NEWFLWRAP $FLWRAP" | awk '{print ($1 > $2)}'))); then
-			FLWRAP=NEEDS-UPDATE
+			FLWRAP="NEEDS-UPDATE"
 		else
 			FLWRAP="is_latest_version"
 		fi
@@ -277,7 +277,7 @@ CHECK() {
 			grep .tar.gz | head -1 | awk -F "-" '{print $2}' | awk -F ".tar.gz" '{print $1}')
 
 		if (($(echo "$NEWFLRIG $FLRIG" | awk '{print ($1 > $2)}'))); then
-			FLRIG=NEEDS-UPDATE
+			FLRIG="NEEDS-UPDATE"
 		else
 			FLRIG="is_latest_version"
 		fi
@@ -294,7 +294,7 @@ CHECK() {
 			grep .tar.gz | head -1 | awk -F "-" '{print $2}' | awk -F ".tar.gz" '{print $1}')
 
 		if (($(echo "$NEWFLAMP $FLAMP" | awk '{print ($1 > $2)}'))); then
-			FLAMP=NEEDS-UPDATE
+			FLAMP="NEEDS-UPDATE"
 		else
 			FLAMP="is_latest_version"
 		fi
@@ -311,7 +311,7 @@ CHECK() {
 			grep .tar.gz | head -1 | awk -F "-" '{print $2}' | awk -F ".tar.gz" '{print $1}')
 
 		if (($(echo "$NEWFLMSG $FLMSG" | awk '{print ($1 > $2)}'))); then
-			FLMSG=NEEDS-UPDATE
+			FLMSG="NEEDS-UPDATE"
 		else
 			FLMSG="is_latest_version"
 		fi
@@ -328,7 +328,7 @@ CHECK() {
 			grep .tar.gz | head -1 | awk -F "-" '{print $2}' | awk -F ".tar" '{print $1}')
 
 		if (($(echo "$NEWFLNET $FLNET" | awk '{print ($1 > $2)}'))); then
-			FLNET=NEEDS-UPDATE
+			FLNET="NEEDS-UPDATE"
 		else
 			FLNET="is_latest_version"
 		fi
@@ -346,7 +346,7 @@ CHECK() {
 		VERTEST=$(echo "$NEWPAT>$PAT" | bc)
 
 		if [ "$VERTEST" = 1 ]; then
-			PAT=NEEDS-UPDATE
+			PAT="NEEDS-UPDATE"
 		else
 			PAT="is_latest_version"
 		fi
@@ -364,7 +364,7 @@ CHECK() {
 			grep .tar.gz | awk -F 'chirp-daily-' '{print $2}' | head -c 8)
 
 		if (($(echo "$NEWCHIRP $CHIRP" | awk '{print ($1 > $2)}'))); then
-			CHIRP=NEEDS-UPDATE
+			CHIRP="NEEDS-UPDATE"
 		else
 			CHIRP="is_latest_version"
 		fi
@@ -381,7 +381,7 @@ CHECK() {
 		NEWDIRE=$(cat /tmp/CHANGES.md | head -5 | tail -1 | awk '{ print $3 }')
 
 		if (($(echo "$NEWDIRE $DIRE" | awk '{print ($1 > $2)}'))); then
-			DIRE=NEEDS-UPDATE
+			DIRE="NEEDS-UPDATE"
 		else
 			DIRE="is_latest_version"
 		fi
@@ -431,7 +431,7 @@ CHECK() {
 		NEWGARIM=$(curl -s https://www.whitemesa.net/garim/garim.html | grep -m 1 \
 			"armv7l.tar.gz" | awk -F '-' '{print $2}')
 		if (($(echo "$NEWGARIM $GARIM" | awk '{print ($1 > $2)}'))); then
-			GARIM=NEEDS-UPDATE
+			GARIM="NEEDS-UPDATE"
 		else
 			GARIM="is_latest_version"
 		fi
@@ -516,7 +516,7 @@ CHECK() {
 	#		Pi-APRS
 	#----------------------------------------------------#
 	if [ -d $HOME/Pi-APRS ]; then
-		PIAPRS=Installed
+		PIAPRS="Installed"
 	else
 		PIAPRS="Not Installed"
 	fi
@@ -624,7 +624,7 @@ CHECK() {
 		if (($(echo "$XLOGLATEST $XLOGCUR" | awk '{print ($1 > $2)}'))); then
 			XLOG="NEEDS-UPDATE"
 		else
-			XLOG=is_latest_version
+			XLOG="is_latest_version"
 		fi
 	fi
 
@@ -634,7 +634,7 @@ CHECK() {
 	if ! hash jtdx 2>/dev/null; then
 		JTDX="Not_Installed"
 	else
-		JTDX=Installed
+		JTDX="Installed"
 	fi
 
 }
